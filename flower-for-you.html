@@ -80,7 +80,6 @@ function layer(k){
   x.ellipse(cx+Math.cos(a)*d,cy+Math.sin(a)*d,r,r*0.92,a,0,Math.PI*2);
   x.stroke();
  }
- // soft glow in the middle
  var g=x.createRadialGradient(cx,cy,0,cx,cy,R*0.35);
  g.addColorStop(0,'rgba(255,230,240,'+(0.02+f*0.03)+')');g.addColorStop(1,'rgba(255,230,240,0)');
  x.fillStyle=g;x.beginPath();x.arc(cx,cy,R*0.35,0,Math.PI*2);x.fill();
@@ -92,7 +91,6 @@ function tick(){
   if(k>=LAYERS)document.getElementById('msg').classList.add('show')}
  frame++;
 }
-// falling petals
 var ps=[];
 for(var i=0;i<28;i++)ps.push({x:Math.random(),y:Math.random(),s:3+Math.random()*5,v:.15+Math.random()*.35,w:Math.random()*6,r:Math.random()*6});
 function petals(t){
